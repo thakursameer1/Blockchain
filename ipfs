@@ -1,0 +1,19 @@
+wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_linux-amd64.tar.gz
+wget https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo_v0.32.1_linux-amd64.tar.gz
+tar -xvzf kubo_v0.32.1_linux-amd64.tar.gz
+cd kubo
+ls
+sudo bash install.sh
+ipfs --version
+ipfs init
+ipfs daemon
+ipfs daemon > ipfs.log 2>&1 &
+echo "Hello, IPFS!" > hello.txt
+ipfs add hello.txt
+ipfs cat <CID>
+mkdir myfolder
+echo "File 1 content" > myfolder/file1.txt
+echo "File 2 content" > myfolder/file2.txt
+ipfs add -r myfolder
+ps aux | grep ipfs
+kill <PID>
